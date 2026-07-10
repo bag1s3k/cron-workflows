@@ -20,7 +20,7 @@ jobs:
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "monitoring: store latest curl response results"
+          commit_message: "monitoring(autoping): store latest curl response results of 'human-right-day' website"
           file_pattern: "monitor.log"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
