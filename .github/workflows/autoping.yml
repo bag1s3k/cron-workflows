@@ -15,7 +15,9 @@ jobs:
         uses: actions/checkout@v7
 
       - name: ping
-        run: curl -s -o /dev/null -w "PING | %{http_code} | $(date '+%Y-%m-%d %H:%M:%S') | %{time_total}s | %{size_download}B | %{remote_ip} | %{url_effective} \n" https://denlidskychprav.pages.dev/ >> monitor.log
+        run: |
+          curl -s -o /dev/null -w "PING | %{http_code} | $(date '+%Y-%m-%d %H:%M:%S') | %{time_total}s | %{size_download}B | %{remote_ip} | %{url_effective} \n" https://denlidskychprav.pages.dev/ >> monitor.log
+          curl -s -o /dev/null -w "PING | %{http_code} | $(date '+%Y-%m-%d %H:%M:%S') | %{time_total}s | %{size_download}B | %{remote_ip} | %{url_effective} \n" https://lendly.free.nf/ >> monitor.log
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v7
